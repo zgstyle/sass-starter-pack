@@ -1,0 +1,119 @@
+//******************************************************************************
+// Name:        _base.scss
+// Description: Games shared sass file. Contains all variables and mixins.
+// Version:     0.2
+// Author:      zigurds@co.inbox.lv (Zigurds Gavars)
+//******************************************************************************
+
+// Compass components
+@import "compass/css3/border-radius"
+@import "compass/layout/grid-background"
+
+// Variables
+  -------------------------------------------------------------------------- {{{
+$site_width:             980px
+
+$site_min_width:         860px
+
+$grid-background-total-columns: 8
+$grid-background-column-width: floor(980 / $grid-background-total-columns)
+$grid-background-column-color: rgba(0, 0, 0, 0.04)
+$grid-background-gutter-color: rgba(255, 0, 0, 1) 
+$grid-background-gutter-width: 1px
+
+// Default radius
+$default-border-radius:  5px !default
+
+// Padding for content and both asides
+$padding:                6px
+
+// Page content
+$page_cnt_width:         floor(980 / $grid-background-total-columns) * 2px
+
+// Left sidebar
+$aside_primary_width:    $grid-background-column-width * 2px
+
+// Right sidebar
+$aside_secondary_width:  $grid-background-column-width * 2px
+
+// Main menu
+$main_menu_height:       64px
+$mm_submenu_height:      43px
+
+// Mini games block min height
+$mg_min_height:          270px
+
+// Mini games single item
+$mg_item_min_height:     128px
+$mg_item_width:          102px
+
+// Mini games sidebar
+$mg_sidebar_width:       204px
+$mg_chat_win_min_height: 170px
+
+// Height of the block "Games you may also like"
+$sim_games_block_height: 131px
+
+// Thumbnails sizes
+$mg_thumb_height:        72px
+$mg_thumb_width:         96px
+
+// Icon sizes
+$icon_main_menu_height:  32px
+$icon_main_menu_width:   53px
+
+$icon_height:            16px
+$icon_width:             16px
+
+$large_icon_height:      48px
+$large_icon_width:       49px
+  
+// Games UI
+  -------------------------------------------------------------------------- {{{
+// Images
+$ui_img:           "/assets/games/img"
+$ui_dialog_title:  $ui_img + "logo_games_s1.png"
+$ui_icons:         $ui_img + "ui_icons.png"
+
+// Dialog
+$dialog_min_width:        180px
+$dialog_content_padding:  15px
+$dialog_titlebar_height:  22px
+$dialog_title_width:      166px
+$dialog_close_height:     13px
+$dialog_close_width:      13px
+
+// Icons
+$ui_icon_height:          15px
+$ui_icon_width:           15px
+
+// Games UI }}}
+// Variables }}}
+
+// Images
+  -------------------------------------------------------------------------- {{{
+$imgUrl:         "/assets/games/img/"
+$imgBgds:        $imgUrl + "backgrounds.png"
+$imgBgdOnlG:     $imgUrl + "backgrounds_online-games.png"
+$imgBoxes:       $imgUrl + "boxes.gif"
+$imgBtnOvr:      $imgUrl + "buttons_overlays.png"
+$imgElm:         $imgUrl + "elements.gif"
+$imgElmSimg:     $imgUrl + "elements_similar_games.gif"
+$icoGameCat:     $imgUrl + "icons_games_categories.png"
+$imgIcoLarge:    $imgUrl + "icons_large.png"
+$imgIcoMisc:     $imgUrl + "icons_misc.png"
+$imgIcoTopM:     $imgUrl + "icons_top_menu.png"
+$imgLoading:     $imgUrl + "loading.gif"
+$imgLoading_s2:  $imgUrl + "loading_size2.gif"
+$imgLocked:      $imgUrl + "locked.jpg"
+$imgTopMenu:     $imgUrl + "elements_top_menu.png"
+
+// Buttons
+$butPrimOut:     $imgUrl + "primary_button_state_default.png"
+$butPrimOver:    $imgUrl + "primary_button_state_hover.png"
+$butSecOut:      $imgUrl + "secondary_button_state_default.png"
+$butSecOver:     $imgUrl + "secondary_button_state_hover.png"
+
+// Images }}}
+
+@import "_shared_mixins"
