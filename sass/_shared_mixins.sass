@@ -1,29 +1,37 @@
 // Mixins
   -------------------------------------------------------------------------- {{{
+=default-font($size: $default-font-size)
+  font: normal #{$size}/1.2 "Liberation Sans", Arial, Helvetica, sans
+  vertical-align: baseline
+
 =db
   display: block
-=dfont($size: 13)
-  font: normal #{$size}px / 1.4 "Liberation Sans", Arial, Helvetica, sans-serif
-=di
-  display: inline
 =dn
   display: none
+=di
+  display: inline
 =dib
   display: inline-block
+  // IE7 quirk
+  zoom: 1
+  *display: inline
 =fl
   float: left
 =fr
   float: right
-=nmp
-  margin: 0
-  outline: 0
-  padding: 0
+=h($H)
+  height: $H
+=lh($H)
+  line-height: $H
 =oh
   overflow: hidden
+=ov
+  overflow: visible
+=nmp
+  margin: 0
+  padding: 0
 =poa
   position: absolute
-=pof
-  position: fixed
 =por
   position: relative
 =tac
@@ -32,6 +40,14 @@
   text-align: left
 =tar
   text-align: right
+=tdn
+  text-decoration: none
+=tdu
+  text-decoration: underline
 =vam
   vertical-align: middle
+=vat
+  vertical-align: top
+=w($W)
+  width: $W
 // Mixins }}}
