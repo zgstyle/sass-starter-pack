@@ -1,0 +1,82 @@
+//******************************************************************************
+  * Description: Usefull mixins
+  ******************************************************************************
+
+=db
+  display: block
+=dn
+  display: none
+=di
+  display: inline
+=dib
+  display: inline-block
+=fl
+  float: left
+=fr
+  float: right
+=h($H: auto)
+  height: $H
+=lh($H: normal)
+  line-height: $H
+=oh
+  overflow: hidden
+=ov
+  overflow: visible
+=miw($MV: 0)
+  min-width: $MV
+=nmp
+  margin: 0
+  padding: 0
+=poa
+  position: absolute
+=pof
+  position: fixed
+=por
+  position: relative
+=pos
+  position: static
+=set-base-font($size: $default-font-size)
+  font: normal #{$size}/1.2 "Liberation Sans", Arial, Helvetica, sans
+  vertical-align: baseline
+=tac
+  text-align: center
+=tal
+  text-align: left
+=tar
+  text-align: right
+=tdn
+  text-decoration: none
+=tdu
+  text-decoration: underline
+=vam
+  vertical-align: middle
+=vat
+  vertical-align: top
+=w($W: auto)
+  width: $W
+
+// In response to the following article:
+// http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/
+$position-default-top: null !default
+$position-default-right: null !default
+$position-default-bottom: null !default
+$position-default-left: null !default
+
+// @private
+=_position($type, $top: $position-default-top, $right: $position-default-right, $bottom: $position-default-bottom, $left: $position-default-left)
+  $allowed_types: "absolute" "relative" "fixed"
+  @if not index($allowed_types, $type)
+    @warn "Unknow position: #{$type}."
+  position: $type
+  @each $data in top $top, right $right, bottom $bottom, left $left
+    // Because of null value to default, if a position argument (eg `$top`) is not set,
+    // Sass does not output the property.
+    // Thus, values like 12px, 23em, -4rem, inherit or initial are accepted.
+    #{nth($data, 1)}: nth($data, 2)
+=absolute($top: $position-default-top, $right: $position-default-right, $bottom: $position-default-bottom, $left: $position-default-left)
+  +_position(absolute, $top, $right, $bottom, $left)
+=relative($top: $position-default-top, $right: $position-default-right, $bottom: $position-default-bottom, $left: $position-default-left)
+  +_position(relative, $top, $right, $bottom, $left)
+=fixed($top: $position-default-top, $right: $position-default-right, $bottom: $position-default-bottom, $left: $position-default-left)
+  +_position(fixed, $top, $right, $bottom, $left)
+
